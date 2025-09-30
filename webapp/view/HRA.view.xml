@@ -1,0 +1,61 @@
+<mvc:View controllerName="HR.zclearance_hra.controller.HRA" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"
+	displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"  xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified">
+		<App id="idAppControl">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<VBox class="sapUiSmallMargin">
+							<f:SimpleForm id="idClearanceForm1" title="Employee Details" editable="false" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4"
+								labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2"
+								columnsL="2" columnsM="1" singleContainerFullSize="false">
+								<f:content>
+									<core:Title text=""/>
+									<Label text="Employee Number" required="true"/>
+									<Text id="idNumber" text="{/Pernr}"/>
+									<Label text="Employee Name"/>
+									<Text id="idName" text="{/Zname}"/>
+									<Label text="Position"/>
+									<Text text="{/Zposition}" id="idPosition"/>
+									<core:Title text=""/>
+									<Label text="Department"/>
+									<Text text="{/Zdepartment}" id="idDept"/>
+									<Label text="Area"/>
+									<Text text="{/Zarea}" id="idArea"/>
+									<Label text="Company"/>
+									<Text text="{/Zcompany}" id="idComp"/>
+								</f:content>
+							</f:SimpleForm>
+						</VBox>
+						<VBox>
+							<f:SimpleForm id="idForm2" editable="false" layout="ResponsiveGridLayout" title="HR Admin Checks" labelSpanXL="4" labelSpanL="3"
+								labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2"
+								columnsL="1" columnsM="1" singleContainerFullSize="false">
+								<f:content>
+									<Label text=""></Label>
+									<CheckBox id="id1" text="Accomodation Cleared" selected="{/ZhraAccomodation}"/>
+									<Label text=""></Label>
+									<CheckBox id="id2" text="Stationary Cleared" selected="{/ZhraStationary}"/>
+									<Label text="Additional Comments"/>
+									<TextArea id="idtext" value="{/ZhraComments}" showExceededText="true" maxLength="255" width="100%" liveChange="handleLiveChange"
+										valueLiveUpdate="true"/>
+									<Label text=""></Label>
+									<Button text="Submit" type="Accept" press="onSave" width="100px"/>
+								</f:content>
+							</f:SimpleForm>
+						</VBox>
+					</content>
+					<!--	<footer>-->
+					<!--	<Bar>-->
+					<!--		<contentRight>-->
+					<!--			<ToolbarSpacer/>-->
+					<!--<Button press="onPrint" text="Print" icon="sap-icon://print" type="Emphasized"/>-->
+					<!--			<Button text="Submit" type="Accept" press="onSave"/>-->
+					<!--<Button text="Cancel" type="Reject" press="onReject"/>-->
+					<!--		</contentRight>-->
+					<!-- sap.ui.core.Control -->
+					<!--	</Bar>-->
+					<!--</footer>-->
+				</Page>
+			</pages>
+		</App>
+</mvc:View>
